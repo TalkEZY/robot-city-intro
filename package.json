@@ -1,0 +1,17 @@
+{
+  "name": "robot-city-intro",
+  "version": "1.0.0",
+  "description": "The header scene/components for ListenCarefully's Robot City",
+  "scripts": {
+    "bs": "browser-sync start --config='bs-config.js'",
+    "compass": "bundle exec compass watch",
+    "compass_compile": "bundle exec compass clean && bundle exec compass compile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh S Ponelat",
+  "readme": "TODO",
+  "license": "Copyright 2015",
+  "devDependencies": {
+    "browser-sync": "^2.2.1"
+  }
+}
