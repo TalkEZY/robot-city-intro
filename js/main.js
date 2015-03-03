@@ -44,10 +44,11 @@
 
     function images_done_loading() {
         init_skrollr();
+        show();
     }
 
     function show() {
-        alert('done loading images');
+        $('#loading-screen').hide();
     }
 
     function create_transform_origin(el){
