@@ -1,8 +1,9 @@
-(function($){
+(function($, skrollr){
     'use strict';
 
     window.choke_timeout;
     window.choke_time = 400;
+    window.skrollr_inst;
 
     var images_loaded = 0;
     var images_to_load = $('.layer').length;
@@ -13,7 +14,7 @@
 
 
     // imperative code...
-    resize();
+    resize()
 
 
     // --------------- Events
@@ -35,23 +36,49 @@
     function image_loaded() {
         if (images_loaded >= (images_to_load -1) && !done_loading_images) {
             done_loading_images = true;
-            show();
+            images_done_loading();
             return
         }
         images_loaded++;
+    }
+
+    function images_done_loading() {
+        init_skrollr();
     }
 
     function show() {
         alert('done loading images');
     }
 
+    function create_transform_origin(el){
+        var $el = $(el);
+
+        var origin = $el.attr('data-_origin');
+        if (!origin) { return }
+
+        origin = origin.split(',');
+        origin[0] *= scale;
+        origin[1] *= scale;
+        $el.css('transform-origin',
+                origin[0] +'px ' + origin[1]+'px' );
+    }
+
     function resize() {
 
-        scale = $(window).width() / target_w;
-        console.log('scale',scale);
+        var win_w = $(window).width();
+        scale = win_w / target_w;
+        $('.layers').width(win_w);
         $('.layer').each(function(){
-            draw_image($(this));
+            var $el = $(this);
+            draw_image($el);
+            create_transform_origin($el);
         });
+    }
+
+    function init_skrollr() {
+        if (!window.skrollr_inst) {
+            window.skrollr_inst = skrollr.init();
+        }
     }
 
     function draw_image(el){
@@ -90,4 +117,4 @@
         }
     }
 
-}).call(window, jQuery);
+}).call(window, jQuery, skrollr);
