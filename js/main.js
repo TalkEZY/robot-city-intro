@@ -1,23 +1,57 @@
 (function($){
     'use strict';
 
+    window.choke_timeout;
+    window.choke_time = 400;
+
     var images_loaded = 0;
     var images_to_load = $('.layer').length;
+    var done_loading_images = false;
 
-    $('.layer').each(function(){
-        draw_image($(this));
+    var target_w = 2048;
+    var scale = 1;
+
+
+    // imperative code...
+    resize();
+
+
+    // --------------- Events
+
+    $(document).ready(function(){ });
+
+    $(window).resize(function(){
+        // Throttle, so that we only call 'resize' sparingly
+        if (window.choke_timeout) { clearTimeout(window.choke_timeout); }
+        window.choke_timeout = setTimeout(function(){
+            resize();
+        },window.choke_time);
+
     });
 
-    $(document).ready(function(){
 
-    });
+    // --------------- Functions
 
     function image_loaded() {
-        images_loaded++;
-        if (images_loaded >= images_loaded) {
-            console.log('Images loaded');
+        if (images_loaded >= (images_to_load -1) && !done_loading_images) {
+            done_loading_images = true;
+            show();
+            return
         }
-        console.log('images_loaded',images_loaded);
+        images_loaded++;
+    }
+
+    function show() {
+        alert('done loading images');
+    }
+
+    function resize() {
+
+        scale = $(window).width() / target_w;
+        console.log('scale',scale);
+        $('.layer').each(function(){
+            draw_image($(this));
+        });
     }
 
     function draw_image(el){
@@ -35,8 +69,8 @@
             $el.find("canvas").remove();
             var dpi = window.devicePixelRatio || 1;
 
-            var w = Math.round(img.width * dpi);
-            var h = Math.round(img.height * dpi);
+            var w = Math.floor(img.width * scale * dpi);
+            var h = Math.floor(img.height * scale * dpi);
 
             $canvas
                 .attr("width",w)
@@ -52,7 +86,7 @@
                 .appendTo($el);
 
             context.drawImage(img,0,0,w,h);
-            imageLoaded();
+            image_loaded();
         }
     }
 
