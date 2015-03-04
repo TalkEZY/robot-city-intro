@@ -10,6 +10,7 @@
     var done_loading_images = false;
 
     var target_w = 2048;
+    var target_h = 1536;
     var scale = 1;
 
 
@@ -69,6 +70,7 @@
         var win_w = $(window).width();
         scale = win_w / target_w;
         $('.layers').width(win_w);
+        $('.layers').height(scale * target_h);
         $('.layer').each(function(){
             var $el = $(this);
             draw_image($el);

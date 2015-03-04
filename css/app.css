@@ -709,16 +709,17 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 9, ../scss/app.scss */
+/* line 10, ../scss/app.scss */
 #loading-screen {
   background: #0a0c0a;
   position: fixed;
+  z-index: 900;
   top: 0px;
   bottom: 0px;
   right: 0px;
   left: 0px;
 }
-/* line 16, ../scss/app.scss */
+/* line 19, ../scss/app.scss */
 #loading-screen > * {
   position: fixed;
   top: 50%;
@@ -729,7 +730,13 @@ textarea {
   font-weight: bold;
 }
 
-/* line 27, ../scss/app.scss */
+/* line 30, ../scss/app.scss */
+.control-panel {
+  min-height: 200px;
+  background: white;
+}
+
+/* line 35, ../scss/app.scss */
 .layers {
-  overflow: none;
+  overflow: hidden;
 }
