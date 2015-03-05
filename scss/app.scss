@@ -7,8 +7,25 @@
 @import "normalize";
 @import "h5bp";
 
+$color-dark-blue: rgb(31, 31, 55);
+$color-base-blue: rgb(47, 48, 69);
+$color-trans-white: rgba(255,255,255,0.7);
+
+$color-main-bg: $color-base-blue;
+$color-main-bg-text: $color-trans-white;
+$color-loading-screen-bg: rgb(10,12,10);
+$color-loading-screen-text: $color-trans-white;
+
+body {
+    background-color: $color-main-bg;
+}
+#intro-section {
+    background-color: rgba($color-main-bg, 0.9);
+    position: relative;
+    color: $color-main-bg-text;
+}
 #loading-screen {
-    background: rgba(10,12,10,1);
+    background: $color-loading-screen-bg;
     position: fixed;
     z-index: 900; // Highest
     top: 0px;
@@ -22,16 +39,23 @@
         left: 0px;
         right: 0px;
         text-align: center;
-        color: #eee;
+        color: $color-loading-screen-text;
         font-weight: bold;
     }
 }
 
 .control-panel {
+    margin-top: -200px;
     min-height: 200px;
     background: white;
+    z-index: 100; // Above main screen
 }
 
 .layers {
-    overflow: hidden;
+    position: relative;
+    .layer {
+        position: relative;
+    }
 }
+
+

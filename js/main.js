@@ -15,7 +15,7 @@
 
 
     // imperative code...
-    resize()
+    resize();
 
 
     // --------------- Events
@@ -32,7 +32,39 @@
     });
 
 
-    // --------------- Functions
+    // --------------- Functions - Higher level
+
+    function images_done_loading() {
+        init_skrollr().then(show);
+    }
+
+    function show() {
+        $('#loading-screen').hide();
+    }
+
+    function resize() {
+        scale = $(window).width() / target_w;
+        resize_layers();
+        resize_intro_section();
+        skrollr.init().refresh();
+    }
+
+    // --------------- Functions - Utillity
+
+    function resize_layers() {
+
+        $('.layers').width($(window).width());
+        $('.layers').height(scale * target_h);
+        $('.layer').each(function(){
+            var $el = $(this);
+            draw_image($el);
+            custom_scaled_attrs($el);
+        });
+    }
+
+    function resize_intro_section() {
+        custom_scaled_attrs($('#intro-section'));
+    }
 
     function image_loaded() {
         if (images_loaded >= (images_to_load -1) && !done_loading_images) {
@@ -43,45 +75,44 @@
         images_loaded++;
     }
 
-    function images_done_loading() {
-        init_skrollr();
-        show();
-    }
-
-    function show() {
-        $('#loading-screen').hide();
-    }
-
-    function create_transform_origin(el){
+    function custom_scaled_attrs (el) {
         var $el = $(el);
 
-        var origin = $el.attr('data-_base');
-        if (!origin) { return }
+        var origin = $el.attr('data-_origin');
+        if (origin) {
+            origin = origin.split(',');
+            origin[0] *= scale;
+            origin[1] *= scale;
+            $el.css('transform-origin',
+                    origin[0] +'px ' + origin[1]+'px' );
+        }
 
-        origin = origin.split(',');
-        origin[0] *= scale;
-        origin[1] *= scale;
-        $el.css('transform-origin',
-                origin[0] +'px ' + origin[1]+'px' );
-    }
+        var top = $el.attr('data-_top');
+        if (top) {
+            top = parseInt(top, 10) * scale;
+            $el.css('top', top);
+        }
 
-    function resize() {
-
-        var win_w = $(window).width();
-        scale = win_w / target_w;
-        $('.layers').width(win_w);
-        $('.layers').height(scale * target_h);
-        $('.layer').each(function(){
-            var $el = $(this);
-            draw_image($el);
-            create_transform_origin($el);
-        });
+        var height = $el.attr('data-_height');
+        if (height) {
+            if (0 < height <= 1) {
+                // We are using a percentage then...
+                height *= target_h;
+            }
+            height *= scale;
+            $el.css('height', height);
+        }
     }
 
     function init_skrollr() {
-        if (!window.skrollr_inst) {
-            window.skrollr_inst = skrollr.init();
-        }
+        var promise = $.Deferred();
+
+        window.skrollr_inst = skrollr.init({ });
+
+        // animate/scroll 1px down, so that everything is in place, then allow the promise to resolve.
+        window.skrollr_inst.animateTo(1, {done: function() {promise.resolve() }});
+
+        return promise;
     }
 
     function draw_image(el){

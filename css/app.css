@@ -709,7 +709,19 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 10, ../scss/app.scss */
+/* line 19, ../scss/app.scss */
+body {
+  background-color: #2f3045;
+}
+
+/* line 22, ../scss/app.scss */
+#intro-section {
+  background-color: rgba(47, 48, 69, 0.9);
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 27, ../scss/app.scss */
 #loading-screen {
   background: #0a0c0a;
   position: fixed;
@@ -719,24 +731,30 @@ textarea {
   right: 0px;
   left: 0px;
 }
-/* line 19, ../scss/app.scss */
+/* line 36, ../scss/app.scss */
 #loading-screen > * {
   position: fixed;
   top: 50%;
   left: 0px;
   right: 0px;
   text-align: center;
-  color: #eee;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
 
-/* line 30, ../scss/app.scss */
+/* line 47, ../scss/app.scss */
 .control-panel {
+  margin-top: -200px;
   min-height: 200px;
   background: white;
+  z-index: 100;
 }
 
-/* line 35, ../scss/app.scss */
+/* line 54, ../scss/app.scss */
 .layers {
-  overflow: hidden;
+  position: relative;
+}
+/* line 56, ../scss/app.scss */
+.layers .layer {
+  position: relative;
 }
