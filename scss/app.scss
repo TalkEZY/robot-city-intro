@@ -7,6 +7,9 @@
 @import "normalize";
 @import "h5bp";
 
+$loading-building-height: 100px;
+$loading-building-width: 74px;
+
 $color-dark-blue: rgb(31, 31, 55);
 $color-orange: rgb(233,43,55);
 $color-base-blue: rgb(47, 48, 69);
@@ -75,6 +78,7 @@ body {
     bottom: 0px;
     right: 0px;
     left: 0px;
+    width: 100%;
 
     & > * {
         position: fixed;
@@ -84,6 +88,12 @@ body {
         text-align: center;
         color: $color-loading-screen-text;
         font-weight: bold;
+    }
+    & > svg {
+        top: 35%;
+        top: calc(50% - #{$loading-building-height} - 1em);
+        left: 50%;
+        margin-left: -$loading-building-width/2;
     }
 }
 

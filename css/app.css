@@ -709,17 +709,17 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 23, ../scss/app.scss */
+/* line 26, ../scss/app.scss */
 body {
   background-color: #2f3045;
 }
 
-/* line 26, ../scss/app.scss */
+/* line 29, ../scss/app.scss */
 #intro-section {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
 }
-/* line 29, ../scss/app.scss */
+/* line 32, ../scss/app.scss */
 #intro-section .header-panel {
   position: absolute;
   border-radius: 4px;
@@ -730,12 +730,12 @@ body {
   text-align: center;
   padding: 3em;
 }
-/* line 40, ../scss/app.scss */
+/* line 43, ../scss/app.scss */
 #intro-section .header-panel > .above {
   position: relative;
   z-index: 100;
 }
-/* line 45, ../scss/app.scss */
+/* line 48, ../scss/app.scss */
 #intro-section .header-panel:before {
   position: absolute;
   content: ' ';
@@ -747,7 +747,7 @@ body {
   bottom: 0;
   z-index: 6;
 }
-/* line 56, ../scss/app.scss */
+/* line 59, ../scss/app.scss */
 #intro-section .header-panel:after {
   position: absolute;
   content: ' ';
@@ -760,7 +760,7 @@ body {
   z-index: 90;
 }
 
-/* line 70, ../scss/app.scss */
+/* line 73, ../scss/app.scss */
 #loading-screen {
   background: #0a0c0a;
   position: fixed;
@@ -769,8 +769,9 @@ body {
   bottom: 0px;
   right: 0px;
   left: 0px;
+  width: 100%;
 }
-/* line 79, ../scss/app.scss */
+/* line 83, ../scss/app.scss */
 #loading-screen > * {
   position: fixed;
   top: 50%;
@@ -780,13 +781,20 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
+/* line 92, ../scss/app.scss */
+#loading-screen > svg {
+  top: 35%;
+  top: calc(50% - 100px - 1em);
+  left: 50%;
+  margin-left: -37px;
+}
 
-/* line 90, ../scss/app.scss */
+/* line 100, ../scss/app.scss */
 #control-panel {
   position: relative;
   text-align: center;
 }
-/* line 93, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 #control-panel section {
   position: absolute;
   min-height: 150px;
@@ -797,7 +805,7 @@ body {
   z-index: 100;
 }
 
-/* line 104, ../scss/app.scss */
+/* line 114, ../scss/app.scss */
 button {
   border-radius: 4px;
   background-color: #2c57c7;
@@ -807,20 +815,20 @@ button {
   padding: 0.2em 1em;
   margin: 0;
 }
-/* line 112, ../scss/app.scss */
+/* line 122, ../scss/app.scss */
 button:hover {
   background-color: #4e74d8;
 }
-/* line 115, ../scss/app.scss */
+/* line 125, ../scss/app.scss */
 button:visited {
   border: inherit;
 }
 
-/* line 120, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
 .layers {
   position: relative;
 }
-/* line 122, ../scss/app.scss */
+/* line 132, ../scss/app.scss */
 .layers .layer {
   position: relative;
 }

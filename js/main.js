@@ -75,12 +75,23 @@
     }
 
     function image_loaded() {
-        if (images_loaded >= (images_to_load -1) && !done_loading_images) {
+        images_loaded++;
+        update_loading(images_loaded/images_to_load);
+        if (images_loaded >= images_to_load  && !done_loading_images) {
+            images_loaded = 0;
             done_loading_images = true;
             images_done_loading();
             return
         }
-        images_loaded++;
+    }
+
+    var loading_mask = '#loading-city-mask';
+    var loading_mask_height = null;
+    function update_loading(percent) {
+        if (!loading_mask_height) {
+            loading_mask_height = $(loading_mask).attr('height');
+        }
+        $(loading_mask).attr('height', loading_mask_height * (1 - percent));
     }
 
     function custom_scaled_attrs (el) {
