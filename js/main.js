@@ -31,6 +31,12 @@
 
     });
 
+    $('.scroll-down').click(function(e) {
+        e.preventDefault();
+        window.skrollr_inst.animateTo($(document).height(), 2400);
+
+    })
+
 
     // --------------- Functions - Higher level
 
@@ -52,11 +58,13 @@
     // --------------- Functions - Utillity
 
     function resize_layers() {
+        var layer_order = 0;
 
         $('.layers').width($(window).width());
         $('.layers').height(scale * target_h);
         $('.layer').each(function(){
             var $el = $(this);
+            $el.css('z-index', layer_order++);
             draw_image($el);
             custom_scaled_attrs($el);
         });

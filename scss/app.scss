@@ -8,6 +8,7 @@
 @import "h5bp";
 
 $color-dark-blue: rgb(31, 31, 55);
+$color-orange: rgb(233,43,55);
 $color-base-blue: rgb(47, 48, 69);
 $color-trans-white: rgba(255,255,255,0.7);
 
@@ -15,14 +16,56 @@ $color-main-bg: $color-base-blue;
 $color-main-bg-text: $color-trans-white;
 $color-loading-screen-bg: rgb(10,12,10);
 $color-loading-screen-text: $color-trans-white;
+$color-header-panel-bg: $color-orange;
+
+$color-button-default: rgb(44,87,199);
 
 body {
     background-color: $color-main-bg;
 }
 #intro-section {
-    background-color: rgba($color-main-bg, 0.9);
     position: relative;
     color: $color-main-bg-text;
+    .header-panel {
+        position: absolute;
+        border-radius: 4px;
+        background-color: $color-header-panel-bg;
+
+        top: 2em;
+        left: 18%;
+        right: 18%;
+
+        text-align: center;
+        padding: 3em;
+        & > .above {
+            position: relative;
+            z-index: 100;
+        }
+
+        &:before {
+            position: absolute;
+            content: ' ';
+            left: 0%;
+            right: 0%;
+            border-radius: inherit;
+            background-color: inherit;
+            top: 0;
+            bottom: 0;
+            z-index: 6; // behind cinema
+        }
+        &:after{
+            position: absolute;
+            content: ' ';
+            left: 0%;
+            right: 60%;
+            border-radius: inherit;
+            background-color: inherit;
+            top: 0;
+            bottom: 0;
+            z-index: 90;
+        }
+
+    }
 }
 #loading-screen {
     background: $color-loading-screen-bg;
@@ -44,11 +87,34 @@ body {
     }
 }
 
-.control-panel {
-    margin-top: -200px;
-    min-height: 200px;
-    background: white;
-    z-index: 100; // Above main screen
+#control-panel{
+    position: relative;
+    text-align: center;
+    section {
+        position: absolute;
+        min-height: 150px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: $color-trans-white;
+        z-index: 100; // Above main screen
+    }
+}
+
+button{
+    border-radius: 4px;
+    background-color: $color-button-default;
+    color: $color-trans-white;
+    border: none;
+    border-bottom: 4px solid darken($color-button-default, 20%);
+    padding: 0.2em 1em;
+    margin: 0;
+    &:hover {
+        background-color: lighten($color-button-default, 10%);
+    }
+    &:visited {
+        border: inherit;
+    }
 }
 
 .layers {
