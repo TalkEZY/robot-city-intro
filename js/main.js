@@ -5,8 +5,11 @@
     window.choke_time = 400;
     window.skrollr_inst;
 
+    var layers_container = '#layers';
+    var layers = '.layer';
+
     var images_loaded = 0;
-    var images_to_load = $('.layer').length;
+    var images_to_load = $(layers).length;
     var done_loading_images = false;
 
     var target_w = 2048;
@@ -49,10 +52,9 @@
     }
 
     function resize() {
-        scale = $(window).width() / target_w;
+        scale = $(layers_container).width() / target_w;
         resize_layers();
         resize_intro_section();
-        skrollr.init().refresh();
     }
 
     // --------------- Functions - Utillity
@@ -60,21 +62,24 @@
     function resize_layers() {
         var layer_order = 0;
 
-        $('.layers').width($(window).width());
-        $('.layers').height(scale * target_h);
-        $('.layer').each(function(){
+        // $(layers_sel).width(scale);
+        $(layers_container).height(scale * target_h);
+        $(layers).each(function(){
             var $el = $(this);
             $el.css('z-index', layer_order++);
             draw_image($el);
             custom_scaled_attrs($el);
         });
+
     }
+
 
     function resize_intro_section() {
         custom_scaled_attrs($('#intro-section'));
     }
 
     function image_loaded() {
+        if (done_loading_images) { return; }
         images_loaded++;
         update_loading(images_loaded/images_to_load);
         if (images_loaded >= images_to_load  && !done_loading_images) {
@@ -131,10 +136,18 @@
         }
     }
 
+    function refresh_skrollr() {
+        if (!window.skrollr_inst) {
+            init_skrollr();
+        } else {
+            window.skrollr_inst.refresh();
+        }
+    }
+
     function init_skrollr() {
         var promise = $.Deferred();
 
-        window.skrollr_inst = skrollr.init({ });
+        window.skrollr_inst = skrollr.init({forceHeight: false });
 
         // animate/scroll 1px down, so that everything is in place, then allow the promise to resolve.
         window.skrollr_inst.animateTo(1, {done: function() {promise.resolve() }});
