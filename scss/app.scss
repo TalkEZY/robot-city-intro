@@ -21,7 +21,14 @@ $color-loading-screen-bg: rgb(10,12,10);
 $color-loading-screen-text: $color-trans-white;
 $color-header-panel-bg: $color-orange;
 
+$color-layers-border: grey;
 $color-button-default: rgb(44,87,199);
+
+$layers-border-size: 20px;
+$layers-max-size: 1100px;
+$screen-split: $layers-max-size + (2 * $layers-border-size);
+
+$media-split-pane: "screen and (min-width: #{$screen-split})";
 
 body {
     background-color: $color-main-bg;
@@ -127,11 +134,33 @@ button{
     }
 }
 
-.layers {
+#layers {
     position: relative;
+    width: 100%;
+
     .layer {
+        position: relative;
+    }
+    .absolute {
+        position: absolute;
+    }
+    .no-overflow {
+        height: inherit;
+        overflow: hidden;
         position: relative;
     }
 }
 
+
+
+// Split pane
+@media #{$media-split-pane} {
+
+    #layers {
+        max-width: $layers-max-size;
+        margin: 0 auto;
+        border: $layers-border-size solid $color-layers-border;
+        border-top: none;
+    }
+}
 
