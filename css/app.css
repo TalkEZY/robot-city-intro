@@ -729,38 +729,10 @@ body {
   right: 18%;
   text-align: center;
   padding: 3em;
-}
-/* line 50, ../scss/app.scss */
-#intro-section .header-panel > .above {
-  position: relative;
   z-index: 100;
 }
-/* line 55, ../scss/app.scss */
-#intro-section .header-panel:before {
-  position: absolute;
-  content: ' ';
-  left: 0%;
-  right: 0%;
-  border-radius: inherit;
-  background-color: inherit;
-  top: 0;
-  bottom: 0;
-  z-index: 6;
-}
-/* line 66, ../scss/app.scss */
-#intro-section .header-panel:after {
-  position: absolute;
-  content: ' ';
-  left: 0%;
-  right: 60%;
-  border-radius: inherit;
-  background-color: inherit;
-  top: 0;
-  bottom: 0;
-  z-index: 90;
-}
 
-/* line 80, ../scss/app.scss */
+/* line 54, ../scss/app.scss */
 #loading-screen {
   background: #0a0c0a;
   position: fixed;
@@ -771,7 +743,7 @@ body {
   left: 0px;
   width: 100%;
 }
-/* line 90, ../scss/app.scss */
+/* line 64, ../scss/app.scss */
 #loading-screen > * {
   position: fixed;
   top: 50%;
@@ -781,7 +753,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
-/* line 99, ../scss/app.scss */
+/* line 73, ../scss/app.scss */
 #loading-screen > svg {
   top: 35%;
   top: calc(50% - 100px - 1em);
@@ -789,12 +761,12 @@ body {
   margin-left: -37px;
 }
 
-/* line 107, ../scss/app.scss */
+/* line 81, ../scss/app.scss */
 #control-panel {
   position: relative;
   text-align: center;
 }
-/* line 110, ../scss/app.scss */
+/* line 84, ../scss/app.scss */
 #control-panel section {
   position: absolute;
   min-height: 150px;
@@ -805,7 +777,7 @@ body {
   z-index: 100;
 }
 
-/* line 121, ../scss/app.scss */
+/* line 95, ../scss/app.scss */
 button {
   border-radius: 4px;
   background-color: #2c57c7;
@@ -815,29 +787,29 @@ button {
   padding: 0.2em 1em;
   margin: 0;
 }
-/* line 129, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 button:hover {
   background-color: #4e74d8;
 }
-/* line 132, ../scss/app.scss */
+/* line 106, ../scss/app.scss */
 button:visited {
   border: inherit;
 }
 
-/* line 137, ../scss/app.scss */
+/* line 111, ../scss/app.scss */
 #layers {
   position: relative;
   width: 100%;
 }
-/* line 141, ../scss/app.scss */
+/* line 115, ../scss/app.scss */
 #layers .layer {
   position: relative;
 }
-/* line 144, ../scss/app.scss */
+/* line 118, ../scss/app.scss */
 #layers .absolute {
   position: absolute;
 }
-/* line 147, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 #layers .no-overflow {
   height: inherit;
   overflow: hidden;
@@ -845,7 +817,7 @@ button:visited {
 }
 
 @media screen and (min-width: 1140px) {
-  /* line 159, ../scss/app.scss */
+  /* line 133, ../scss/app.scss */
   #layers {
     max-width: 1100px;
     margin: 0 auto;

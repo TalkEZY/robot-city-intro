@@ -47,34 +47,8 @@ body {
 
         text-align: center;
         padding: 3em;
-        & > .above {
-            position: relative;
-            z-index: 100;
-        }
 
-        &:before {
-            position: absolute;
-            content: ' ';
-            left: 0%;
-            right: 0%;
-            border-radius: inherit;
-            background-color: inherit;
-            top: 0;
-            bottom: 0;
-            z-index: 6; // behind cinema
-        }
-        &:after{
-            position: absolute;
-            content: ' ';
-            left: 0%;
-            right: 60%;
-            border-radius: inherit;
-            background-color: inherit;
-            top: 0;
-            bottom: 0;
-            z-index: 90;
-        }
-
+        z-index: 100; // above layers
     }
 }
 #loading-screen {
