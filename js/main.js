@@ -1,6 +1,7 @@
 (function($, skrollr){
     'use strict';
 
+    var SCROLL_DOWN_DURATION = 4000;
     window.choke_timeout;
     window.choke_time = 400;
     window.skrollr_inst;
@@ -36,7 +37,7 @@
 
     $('.scroll-down').click(function(e) {
         e.preventDefault();
-        window.skrollr_inst.animateTo($(document).height(), 2400);
+        window.skrollr_inst.animateTo($(document).height(), {duration: SCROLL_DOWN_DURATION});
 
     })
 
