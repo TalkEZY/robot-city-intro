@@ -10,14 +10,16 @@ $color-dark-blue: rgb(31, 31, 55);
 $color-orange: rgb(233,43,55);
 $color-base-blue: rgb(33,33,57);
 $color-trans-white: rgba(255,255,255,0.7);
+$color-black: rgb(10,12,10);
+$color-happy-blue:  rgb(44,87,199);
 
-// Colors for sections
+// Colors for sections (aliases)
 $color-main-bg: $color-base-blue;
 $color-main-bg-text: $color-trans-white;
-$color-loading-screen-bg: rgb(10,12,10);
 $color-loading-screen-text: $color-trans-white;
+$color-loading-screen-bg: $color-black;
 $color-header-panel-bg: $color-orange;
-$color-button-default: rgb(44,87,199);
+$color-button-default: $color-happy-blue;
 
 body {
     background-color: $color-main-bg;
