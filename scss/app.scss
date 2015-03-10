@@ -42,6 +42,12 @@ body {
         z-index: 100; // above layers
     }
 }
+
+rect#loading-mask {
+    opacity: 0.6;
+    fill: $color-loading-screen-bg;
+}
+
 #loading-screen {
     background: $color-loading-screen-bg;
     position: fixed;
