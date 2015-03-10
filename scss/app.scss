@@ -1,8 +1,3 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "compass/utilities/general/clearfix";
 @import "normalize";
 @import "h5bp";
@@ -10,25 +5,19 @@
 $loading-building-height: 100px;
 $loading-building-width: 74px;
 
+// Colors
 $color-dark-blue: rgb(31, 31, 55);
 $color-orange: rgb(233,43,55);
 $color-base-blue: rgb(33,33,57);
 $color-trans-white: rgba(255,255,255,0.7);
 
+// Colors for sections
 $color-main-bg: $color-base-blue;
 $color-main-bg-text: $color-trans-white;
 $color-loading-screen-bg: rgb(10,12,10);
 $color-loading-screen-text: $color-trans-white;
 $color-header-panel-bg: $color-orange;
-
-$color-layers-border: grey;
 $color-button-default: rgb(44,87,199);
-
-$layers-border-size: 20px;
-$layers-max-size: 1100px;
-$screen-split: $layers-max-size + (2 * $layers-border-size);
-
-$media-split-pane: "screen and (min-width: #{$screen-split})";
 
 body {
     background-color: $color-main-bg;
@@ -110,7 +99,7 @@ button{
 
 #layers {
     position: relative;
-    width: 100%;
+    margin: 0 auto;
 
     .layer {
         position: relative;
@@ -124,17 +113,3 @@ button{
         position: relative;
     }
 }
-
-
-
-// Split pane
-@media #{$media-split-pane} {
-
-    #layers {
-        max-width: $layers-max-size;
-        margin: 0 auto;
-        border: $layers-border-size solid $color-layers-border;
-        border-top: none;
-    }
-}
-
