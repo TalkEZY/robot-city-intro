@@ -8,6 +8,8 @@
 
     var layers_container = '#layers';
     var layers = '.layer';
+    var loading_mask = "#loading-mask";
+    var loading_mask_height;
 
     var images_loaded = 0;
     var images_to_load = $(layers).length;
@@ -15,6 +17,8 @@
 
     var target_w = 2048;
     var target_h = 1536;
+    var target_ratio = target_w / target_h;;
+
     var scale = 1;
 
 
@@ -53,9 +57,32 @@
     }
 
     function resize() {
-        scale = $(layers_container).width() / target_w;
+        // Calculate the scale / ratio
+        var $win = $(window);
+        var win_w = $win.width();
+        var win_h = $win.height();
+
+        calc_scale(win_w, win_h);
+
+        $(layers_container).width(scale * target_w);
+        $(layers_container).height(scale * target_h);
+
         resize_layers();
         resize_intro_section();
+    }
+
+    function calc_scale(win_w, win_h) {
+
+        var win_ratio = win_w / win_h;
+
+        if (win_ratio > target_ratio) {
+            // Use height
+            scale = win_h / target_h;
+        } else {
+            // Use width
+            scale = win_w / target_w;
+        }
+
     }
 
     // --------------- Functions - Utillity
@@ -67,19 +94,12 @@
     }
 
     function resize_layers() {
-        var layer_order = 0;
-
-        // $(layers_sel).width(scale);
-        $(layers_container).height(scale * target_h);
         $(layers).each(function(){
             var $el = $(this);
-            $el.css('z-index', layer_order++);
             draw_image($el);
             custom_scaled_attrs($el);
         });
-
     }
-
 
     function resize_intro_section() {
         custom_scaled_attrs($('#intro-section'));
@@ -97,13 +117,14 @@
         }
     }
 
-    var loading_mask = '#loading-city-mask';
-    var loading_mask_height = null;
     function update_loading(percent) {
+        var $mask = $(loading_mask);
+
         if (!loading_mask_height) {
-            loading_mask_height = $(loading_mask).attr('height');
+            loading_mask_height = $mask.attr('height');
         }
-        $(loading_mask).attr('height', loading_mask_height * (1 - percent));
+
+        $mask.attr('height', loading_mask_height * (1 - percent));
     }
 
     function custom_scaled_attrs (el) {
@@ -134,6 +155,7 @@
 
         var height = $el.attr('data-_height');
         if (height) {
+            height = parseFloat(height);
             if (0 < height <= 1) {
                 // We are using a percentage then...
                 height *= target_h;
