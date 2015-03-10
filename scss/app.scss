@@ -1,29 +1,13 @@
 @import "compass/utilities/general/clearfix";
 @import "normalize";
 @import "h5bp";
+@import "variables";
 
-$loading-building-height: 100px;
-$loading-building-width: 74px;
-
-// Colors
-$color-dark-blue: rgb(31, 31, 55);
-$color-orange: rgb(233,43,55);
-$color-base-blue: rgb(33,33,57);
-$color-trans-white: rgba(255,255,255,0.7);
-$color-black: rgb(10,12,10);
-$color-happy-blue:  rgb(44,87,199);
-
-// Colors for sections (aliases)
-$color-main-bg: $color-base-blue;
-$color-main-bg-text: $color-trans-white;
-$color-loading-screen-text: $color-trans-white;
-$color-loading-screen-bg: $color-black;
-$color-header-panel-bg: $color-orange;
-$color-button-default: $color-happy-blue;
 
 body {
     background-color: $color-main-bg;
 }
+
 #intro-section {
     position: relative;
     color: $color-main-bg-text;
