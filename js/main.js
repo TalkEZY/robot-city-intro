@@ -37,6 +37,7 @@
 
     $('.scroll-down').click(function(e) {
         e.preventDefault();
+        console.log($(document).height());
         scrollToBottom();
     })
 
