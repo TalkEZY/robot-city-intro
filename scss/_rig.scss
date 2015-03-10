@@ -1,0 +1,11 @@
+#version {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    opacity: 0.5;
+    font-weight: bold;
+    z-index: 9999;
+    font-size: 0.7rem;
+    color: $color-main-bg-text;
+}
+

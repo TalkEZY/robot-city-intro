@@ -4,3 +4,7 @@ $('.layer').click(function(e) {
     var y = e.pageY - $(e.target).offset().top;
     alert('x,y :' + x + ',' + y);
 })
+
+$.getJSON('package.json', function(pkg) {
+    $('#version').html('v' + pkg.version);
+});

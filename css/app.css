@@ -705,17 +705,29 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 24, ../scss/app.scss */
+/* line 1, ../scss/_rig.scss */
+#version {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  opacity: 0.5;
+  font-weight: bold;
+  z-index: 9999;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 8, ../scss/app.scss */
 body {
   background-color: #212139;
 }
 
-/* line 27, ../scss/app.scss */
+/* line 12, ../scss/app.scss */
 #intro-section {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
 }
-/* line 30, ../scss/app.scss */
+/* line 15, ../scss/app.scss */
 #intro-section .header-panel {
   position: absolute;
   border-radius: 4px;
@@ -728,13 +740,13 @@ body {
   z-index: 100;
 }
 
-/* line 46, ../scss/app.scss */
+/* line 31, ../scss/app.scss */
 rect#loading-mask {
   opacity: 0.6;
   fill: #0a0c0a;
 }
 
-/* line 51, ../scss/app.scss */
+/* line 36, ../scss/app.scss */
 #loading-screen {
   background: #0a0c0a;
   position: fixed;
@@ -745,7 +757,7 @@ rect#loading-mask {
   left: 0px;
   width: 100%;
 }
-/* line 61, ../scss/app.scss */
+/* line 46, ../scss/app.scss */
 #loading-screen > * {
   position: fixed;
   top: 50%;
@@ -755,7 +767,7 @@ rect#loading-mask {
   color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
-/* line 70, ../scss/app.scss */
+/* line 55, ../scss/app.scss */
 #loading-screen > svg {
   top: 35%;
   top: calc(50% - 100px - 1em);
@@ -763,12 +775,12 @@ rect#loading-mask {
   margin-left: -37px;
 }
 
-/* line 78, ../scss/app.scss */
+/* line 63, ../scss/app.scss */
 #control-panel {
   position: relative;
   text-align: center;
 }
-/* line 81, ../scss/app.scss */
+/* line 66, ../scss/app.scss */
 #control-panel section {
   position: absolute;
   min-height: 150px;
@@ -779,7 +791,7 @@ rect#loading-mask {
   z-index: 100;
 }
 
-/* line 92, ../scss/app.scss */
+/* line 77, ../scss/app.scss */
 button {
   border-radius: 4px;
   background-color: #2c57c7;
@@ -789,29 +801,29 @@ button {
   padding: 0.2em 1em;
   margin: 0;
 }
-/* line 100, ../scss/app.scss */
+/* line 85, ../scss/app.scss */
 button:hover {
   background-color: #4e74d8;
 }
-/* line 103, ../scss/app.scss */
+/* line 88, ../scss/app.scss */
 button:visited {
   border: inherit;
 }
 
-/* line 108, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 #layers {
   position: relative;
   margin: 0 auto;
 }
-/* line 112, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 #layers .layer {
   position: relative;
 }
-/* line 115, ../scss/app.scss */
+/* line 100, ../scss/app.scss */
 #layers .absolute {
   position: absolute;
 }
-/* line 118, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 #layers .no-overflow {
   height: inherit;
   overflow: hidden;
