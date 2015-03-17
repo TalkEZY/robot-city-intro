@@ -1,6 +1,6 @@
 {
   "name": "robot-city-intro",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The header scene/components for ListenCarefully's Robot City",
   "scripts": {
     "bs": "browser-sync start --config='bs-config.js'",
