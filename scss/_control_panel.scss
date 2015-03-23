@@ -1,0 +1,13 @@
+#control-panel{
+    position: relative;
+    text-align: center;
+    section {
+        position: absolute;
+        min-height: 150px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: $color-trans-white;
+        z-index: 100; // Above main screen
+    }
+}
