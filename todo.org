@@ -1,0 +1,13 @@
+** Backlog [0/11]
+- [ ] Create Angular framework [0/1]
+    - [ ] Create a dummy directive for a progress bar
+- [ ] Create "Points" and "Explored" progress bars, vertical
+- [ ] Create a main frame for holding CT timer and Db
+- [ ] Create "Countdown Timer" and "Db" progress meters
+- [ ] Create inject/data abstraction
+- [ ] Create the wave graph
+- [ ] Create the mood on the wave graph, using color and perhaps thickness
+- [ ] Create the selection boxes, 12
+- [ ] Add flicker/pulsating opacity on frames
+- [ ] Add animatable PNGs to main frame
+- [ ] Add avatar with circular frame
