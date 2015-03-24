@@ -1,2 +1,1 @@
-
-angular.module('robot', ['controlPanel'])
+angular.module('robot', ['controlPanel']);

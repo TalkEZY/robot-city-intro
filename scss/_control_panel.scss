@@ -17,4 +17,36 @@
         background: $color-trans-white;
         z-index: 100; // Above main screen
     }
+
+    // For "Points" and "Explored"
+    .meter-vert-frame{
+      position: relative;
+      height: 12em;
+      box-sizing: border-box;
+      float: left;
+      width: 10%;
+      overflow: hidden;
+      background: rgba(0,0,0,0.2);
+      margin-right: .2em;
+
+      .bar {
+        background: teal;
+        position: absolute;
+        top: 98%;
+        bottom: 0;
+        left: .2em;
+        right: .2em;
+        transition: top 0.5s ease;
+      }
+
+      .text {
+        position: relative;
+        top: 3em;
+        font-size: 1.2em;
+        width: 100%;
+        text-align: center;
+        z-index: 128;
+      }
+
+    }
 }

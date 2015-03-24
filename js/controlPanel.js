@@ -1,6 +1,14 @@
-/* global angular */
+/* global window */
+(function(angular) {
 
-angular.module('controlPanel', ['controlPanel.components'])
-    .controller('controlPanel', [function controlPanelControlller(dogs){
-            var vm = this;
-        }])
+angular
+  .module('controlPanel', ['controlPanel.components'])
+  .controller('controlPanel', [controlPanelControlller]);
+
+  ///////////
+
+  function controlPanelControlller(){
+    var vm = this;
+  }
+
+})(window.angular);

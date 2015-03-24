@@ -23,33 +23,29 @@
 
         <div id="control-panel"  data-ng-controller="controlPanel as vm">
 
-            <div data-robot-greeting="" data-greeting="howdy"></div>
+            <div class="left" data-meter-vert="" data-color="red"></div>
+            <div class="left" data-meter-vert="" ></div>
 
         </div>
 
 
         <!-- Javscript -->
-        <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-2.1.3.min.js"><\/script>')</script>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"></script>
-        <script>window.skrollr || document.write('<script src="/bower_components/skrollr/dist/skrollr.min.js"><\/script>')</script>
+        <script src="/bower_components/skrollr/dist/skrollr.min.js"></script>
+        <script>window.skrollr || document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"><\/script>')</script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-        <script>window.angular || document.write('<script src="/bower_components/angular/angular.min.js"><\/script>')</script>
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script>window.angular || document.write('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"><\/script>')</script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <!-- <script src="js/plugins.js"></script> -->
+        <!-- <script src="js/main.js"></script> -->
 
         <!-- AngularJS dev files -->
         <script src="js/controlPanel.components.js"></script>
         <script src="js/controlPanel.js"></script>
         <script src="js/app.module.js"></script>
-
-        <!-- for rig only -->
-        <script src="js/rig.js"></script>
-
-        <!-- no Google analytics needed yet -->
 
     </body>
 </html>
