@@ -1,10 +1,14 @@
-** Backlog [0/11]
-- [ ] Create Angular framework [0/1]
-    - [ ] Create a dummy directive for a progress bar
-- [ ] Create "Points" and "Explored" progress bars, vertical
+** Backlog [1/13]
+- [X] Create Angular framework [1/1]
+    - [X] Create a dummy directive for a progress bar
+- [ ] Put an intrinsic ratio frame around components
+- [-] Create "Points" and "Explored" progress bars, vertical
+  - [X] Basics vertical motion with transition
+  - [ ] Expose api
 - [ ] Create a main frame for holding CT timer and Db
 - [ ] Create "Countdown Timer" and "Db" progress meters
 - [ ] Create inject/data abstraction
+  - [ ] Keep in mind we'll be talking to the API ourselves (PHP).
 - [ ] Create the wave graph
 - [ ] Create the mood on the wave graph, using color and perhaps thickness
 - [ ] Create the selection boxes, 12
