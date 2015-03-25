@@ -23,8 +23,37 @@
 
         <div id="control-panel"  data-ng-controller="controlPanel as vm">
 
-            <div class="left" data-meter-vert="" data-color="red"></div>
-            <div class="left" data-meter-vert="" ></div>
+              <div class="boxy">
+                <div class="left" data-meter-vert="" data-model="vm.ducks" ></div>
+                <div class="left" data-meter-vert="" data-model="vm.geese" ></div>
+              </div>
+
+            <div class="left">
+
+              <div class="boxy">
+                <input class="left" type="text" data-ng-model="vm.ducks.label">
+                <input class="left" type="number" data-ng-model="vm.ducks.value">
+                <select class="left" data-ng-model="vm.ducks.color">
+                  <option data-ng-repeat="color in vm.colors" value="{{color.value}}" >{{color.label}}</option>
+                </select>
+                <button class="left" type="button" data-ng-click="vm.ducks.value = 0;">Zero</button>
+                <button class="left" type="button" data-ng-click="vm.ducks.value = 100;">Max</button>
+                <button class="left" type="button" data-ng-click="vm.ducks.value = 75;">75%</button>
+              </div>
+
+              <div class="boxy">
+
+                <input class="left" type="text" data-ng-model="vm.geese.label">
+                <input class="left" type="number" data-ng-model="vm.geese.value">
+                <select class="left" data-ng-model="vm.geese.color">
+                  <option data-ng-repeat="color in vm.colors" value="{{color.value}}" >{{color.label}}</option>
+                </select>
+                <button class="left" type="button" data-ng-click="vm.geese.value = 0;">Zero</button>
+                <button class="left" type="button" data-ng-click="vm.geese.value = 100;">Max</button>
+                <button class="left" type="button" data-ng-click="vm.geese.value = 75;">75%</button>
+              </div>
+
+            </div>
 
         </div>
 
