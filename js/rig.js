@@ -8,7 +8,7 @@ var target_h = 1536;
 
 function alert_xy_scaled(e) {
   var xy = get_xy_scaled(e);
-  alert(xy);
+  alert_xy(xy);
 }
 
 function get_xy_scaled(e) {
@@ -24,13 +24,13 @@ function get_xy_scaled(e) {
 
 function alert_xy_scaled_percent(e) {
   var xy = get_xy_scaled(e);
-  xy[0] = (xy[0] / target_w) * 100 + '%';
-  xy[1] = (xy[1] / target_h) * 100 + '%';
-  alert(xy);
+  xy[0] = (xy[0] / target_w) * 100;
+  xy[1] = (xy[1] / target_h) * 100;
+  alert_xy(xy,'%');
 }
 
-function alert_xy(xy) {
-  alert('x,y :' + xy[0] + ',' + xy[1]);
+function alert_xy(xy,suffix) {
+  alert('x,y: ' + xy[0].toFixed(2) + suffix + ',' + xy[1].toFixed(2) + suffix);
 }
 
 function calc_scale(el) {
