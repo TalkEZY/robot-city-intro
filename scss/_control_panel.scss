@@ -1,8 +1,15 @@
+.scaled {
+
+  & * {
+    pointer-events: none;
+  }
+}
 #control-panel-wrapper {
     position: relative;
-    width: 92%;
-    left: 4%;
-    padding-bottom: 3/7 * 100%; // ratio, as a percentange of height/width
+    // width: 512px;
+    font-size: 8px;
+    height: 0;
+    padding-bottom: 768/1024 * 100%;
 }
 
 // Control panel
@@ -11,7 +18,18 @@
     height: 100%;
     width: 100%;
 
-    background: $control-panel-bg-color; // to see what is happening
+    background: url(../img/mockup-dash.png) no-repeat top left ;
+    background-size: 100% 100%;
+
+    &:after{
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255,255,255,0.8);
+    }
+
 
     label,p,h1,h2,h3,h4,h5,h6 {
         color: $control-panel-text-color;
@@ -21,12 +39,12 @@
     // For "Points" and "Explored"
     [data-vert-meter] {
 
-      position: relative;
-      float: left;
-      // width: 12%;
-      height: 80%;
-      top: 10%;
-      margin-left: 1%;
+      position: absolute;
+      z-index: 2; // debug, remove after
+      width: 5.5%;
+      height: 23%;
+      bottom: 7%;
+      left: 20%;
 
       .frame{
 
@@ -47,13 +65,34 @@
         .text {
           position: relative;
           z-index: 128;
-          top: 10%;
+          top: 25%;
+          font-weight: bold;
+          font-size: 1em;
+          letter-spacing: 0.01em;
 
           text-align: center;
-          padding: 0 1em;
+          .label {
+            padding: 0;
+            margin: 0;
+          }
+          .value {
+            padding: 0;
+            margin: 0;
+            margin-top: -.2em;
+            font-size: 1.7em;
+          }
         }
 
       }
     }
+
+    #points-meter {
+      left: 17%;
+    }
+
+    #explored-meter {
+      left: 24%;
+    }
+
 
   }

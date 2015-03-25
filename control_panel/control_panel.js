@@ -18,21 +18,21 @@ angular
       {label: 'grey', value: '#585858'}
     ];
 
-    vm.ducks = {
-      label: 'Ducks',
+    vm.points = {
+      label: 'Points',
       value: 12,
       color: vm.colors[0].value,
       show: true,
     };
-    vm.geese = {
-      label: 'A largish title',
-      value: 10,
+    vm.explored = {
+      label: 'Explored',
+      value: 100,
       color: vm.colors[1].value,
       show: true
     }
 
     $timeout(function() {
-      vm.geese.value = 45;
+      vm.points.value = 45;
     },2000)
 
   }

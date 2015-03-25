@@ -21,12 +21,18 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="control-panel-wrapper"> <!-- to keep the correct ratio, has width -->
-          <div id="control-panel"  data-ng-controller="controlPanel as vm">
+        <div class="scaled">
+          <div id="control-panel-wrapper"> <!-- to keep the correct ratio, has width -->
 
-              <div id="vert-meter-ducks" data-vert-meter="" data-state="vm.ducks" > </div>
-              <div id="vert-meter-geese" data-vert-meter="" data-state="vm.geese" > </div>
+            <!-- <img src="img/dash-mockup.png" width="100%" height="100%" style="position: absolute" alt=""> -->
+            <!-- <div class="white-overlay"></div> -->
 
+            <div id="control-panel"  data-ng-controller="controlPanel as vm">
+
+                <div id="explored-meter" data-vert-meter="" data-state="vm.explored" > </div>
+                <div id="points-meter" data-vert-meter="" data-state="vm.points" > </div>
+
+            </div>
           </div>
         </div>
 
@@ -48,6 +54,8 @@
         <script src="control_panel/control_panel.vert_meter.js"></script>
         <script src="control_panel/control_panel.js"></script>
         <script src="js/app.module.js"></script>
+
+        <script src="js/rig.js"></script>
 
     </body>
 </html>
