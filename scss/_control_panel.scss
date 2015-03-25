@@ -1,0 +1,98 @@
+.scaled {
+
+  & * {
+    pointer-events: none;
+  }
+}
+#control-panel-wrapper {
+    position: relative;
+    // width: 512px;
+    font-size: 8px;
+    height: 0;
+    padding-bottom: 768/1024 * 100%;
+}
+
+// Control panel
+#control-panel{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background: url(../img/mockup-dash.png) no-repeat top left ;
+    background-size: 100% 100%;
+
+    &:after{
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255,255,255,0.8);
+    }
+
+
+    label,p,h1,h2,h3,h4,h5,h6 {
+        color: $control-panel-text-color;
+    }
+
+    // Angular directive
+    // For "Points" and "Explored"
+    [data-vert-meter] {
+
+      position: absolute;
+      z-index: 2; // debug, remove after
+      width: 5.5%;
+      height: 23%;
+      bottom: 7%;
+      left: 20%;
+
+      .frame{
+
+        height: 100%;
+        overflow: hidden;
+        background: rgba(0,0,0,0.2);
+
+        .bar {
+          background: teal;
+          position: absolute;
+          top: 98%;
+          bottom: 0;
+          left: .2em;
+          right: .2em;
+          transition: top 0.5s ease;
+        }
+
+        .text {
+          position: relative;
+          z-index: 128;
+          top: 25%;
+          font-weight: bold;
+          font-size: 1em;
+          letter-spacing: 0.01em;
+
+          text-align: center;
+          .label {
+            padding: 0;
+            margin: 0;
+          }
+          .value {
+            padding: 0;
+            margin: 0;
+            margin-top: -.2em;
+            font-size: 1.7em;
+          }
+        }
+
+      }
+    }
+
+    #points-meter {
+      left: 17%;
+    }
+
+    #explored-meter {
+      left: 24%;
+    }
+
+
+  }

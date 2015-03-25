@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Robot City intro RIG: control panel</title>
+
+        <!-- I won't be dealing with SEO in this project -->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/app.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body data-ng-app="robot">
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="scaled">
+          <div id="control-panel-wrapper"> <!-- to keep the correct ratio, has width -->
+
+            <!-- <img src="img/dash-mockup.png" width="100%" height="100%" style="position: absolute" alt=""> -->
+            <!-- <div class="white-overlay"></div> -->
+
+            <div id="control-panel"  data-ng-controller="controlPanel as vm">
+
+                <div id="explored-meter" data-vert-meter="" data-state="vm.explored" > </div>
+                <div id="points-meter" data-vert-meter="" data-state="vm.points" > </div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Javscript -->
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-2.1.3.min.js"><\/script>')</script>
+
+        <script src="/bower_components/skrollr/dist/skrollr.min.js"></script>
+        <script>window.skrollr || document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"><\/script>')</script>
+
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script>window.angular || document.write('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"><\/script>')</script>
+
+        <!-- <script src="js/plugins.js"></script> -->
+        <!-- <script src="js/main.js"></script> -->
+
+        <!-- AngularJS dev files -->
+        <script src="control_panel/control_panel.vert_meter.js"></script>
+        <script src="control_panel/control_panel.js"></script>
+        <script src="js/app.module.js"></script>
+
+        <script src="js/rig.js"></script>
+
+    </body>
+</html>

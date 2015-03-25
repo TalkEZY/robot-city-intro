@@ -4,6 +4,7 @@
   "description": "The header scene/components for ListenCarefully's Robot City",
   "scripts": {
     "bs": "browser-sync start --config='bs-config.js'",
+    "bs-control-panel": "browser-sync start --server --files='**/*.*' --startPath='rig-control-panel.html' ",
     "compass": "bundle exec compass watch",
     "compass_compile": "bundle exec compass clean && bundle exec compass compile",
     "test": "echo \"Error: no test specified\" && exit 1"
