@@ -24,7 +24,7 @@ angular
       color: vm.colors[0].value
     };
     vm.geese = {
-      label: 'Geese',
+      label: 'A largish title',
       value: 60,
       color: vm.colors[1].value
     }
