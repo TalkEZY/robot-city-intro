@@ -2,12 +2,12 @@
 (function(angular) {
 
 angular
-  .module('controlPanel', ['controlPanel.components'])
-  .controller('controlPanel', [controlPanelControlller]);
+  .module('controlPanel', ['controlPanelVertMeter'])
+  .controller('controlPanel', ['$timeout',controlPanelControlller]);
 
   ///////////
 
-  function controlPanelControlller(){
+  function controlPanelControlller($timeout){
     var vm = this;
 
     vm.colors = [
@@ -21,13 +21,19 @@ angular
     vm.ducks = {
       label: 'Ducks',
       value: 12,
-      color: vm.colors[0].value
+      color: vm.colors[0].value,
+      show: true,
     };
     vm.geese = {
       label: 'A largish title',
-      value: 60,
-      color: vm.colors[1].value
+      value: 10,
+      color: vm.colors[1].value,
+      show: true
     }
+
+    $timeout(function() {
+      vm.geese.value = 45;
+    },2000)
 
   }
 

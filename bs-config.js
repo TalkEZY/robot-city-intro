@@ -16,6 +16,7 @@ module.exports = {
     "files": "*.html,\
               *.js,\
               js/*.js,\
+              control_panel/**/*,\
               css/*.css",
     "server": true,
     "proxy": false,

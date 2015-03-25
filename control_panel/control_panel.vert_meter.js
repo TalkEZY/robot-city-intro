@@ -2,37 +2,37 @@
 (function(angular) {
 
 angular
-  .module('controlPanel.components', [])
-  .directive('meterVert', ['$interval', '$timeout', meterVert]);
+  .module('controlPanelVertMeter', [])
+  .directive('vertMeter', ['$interval', '$timeout', vertMeter]);
 
 ///////////////
 
-function meterVert($interval, $timeout) {
+function vertMeter($interval, $timeout) {
 
   return {
     replace: false,
     restrict: 'A',
     link: link,
     scope: {
-      d: '=model'
+      state: '='
     },
-    templateUrl: 'controlPanel/meter_vert.partial.html'
+    templateUrl: 'control_panel/control_panel.vert_meter.partial.html'
   };
 
   ////////////////
 
   function link($scope,$el,$attrs) {
-    $scope.d = $scope.d || {};
-    var d = $scope.d;
+    $scope.state = $scope.state || {};
+    var state = $scope.state;
     var bar = $el.find('.bar');
 
     // Custom color
-    $scope.$watch('d.color', function(newVal) {
+    $scope.$watch('state.color', function(newVal) {
       bar.css('background-color', newVal)
     })
 
     // Watch the value
-    $scope.$watch('d.value', setHeight)
+    $scope.$watch('state.value', setHeight)
 
     ///////////
 

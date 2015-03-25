@@ -24,8 +24,8 @@
         <div id="control-panel-wrapper"> <!-- to keep the correct ratio, has width -->
           <div id="control-panel"  data-ng-controller="controlPanel as vm">
 
-              <div id="vert-meter-ducks" data-meter-vert="" data-model="vm.ducks" > </div>
-              <div id="vert-meter-geese" data-meter-vert="" data-model="vm.geese" > </div>
+              <div id="vert-meter-ducks" data-vert-meter="" data-state="vm.ducks" > </div>
+              <div id="vert-meter-geese" data-vert-meter="" data-state="vm.geese" > </div>
 
           </div>
         </div>
@@ -45,8 +45,8 @@
         <!-- <script src="js/main.js"></script> -->
 
         <!-- AngularJS dev files -->
-        <script src="js/controlPanel.components.js"></script>
-        <script src="js/controlPanel.js"></script>
+        <script src="control_panel/control_panel.vert_meter.js"></script>
+        <script src="control_panel/control_panel.js"></script>
         <script src="js/app.module.js"></script>
 
     </body>
