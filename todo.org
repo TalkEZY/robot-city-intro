@@ -1,7 +1,7 @@
-** Backlog [1/13]
+** Backlog [2/12]
 - [X] Create Angular framework [1/1]
     - [X] Create a dummy directive for a progress bar
-- [ ] Put an intrinsic ratio frame around components
+- [X] Put an intrinsic ratio frame around components
 - [-] Create "Points" and "Explored" progress bars, vertical
   - [X] Basics vertical motion with transition
   - [ ] Expose api
