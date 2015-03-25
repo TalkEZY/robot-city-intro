@@ -13,34 +13,37 @@ function meterVert($interval, $timeout) {
     replace: false,
     restrict: 'A',
     link: link,
-    scope: {},
+    scope: {
+      d: '=model'
+    },
     templateUrl: 'controlPanel/meter_vert.partial.html'
   };
 
-  ///////
+  ////////////////
 
   function link($scope,$el,$attrs) {
     $scope.d = $scope.d || {};
     var d = $scope.d;
     var bar = $el.find('.bar');
 
-    d.value = Math.ceil(Math.random() * 100);
-    d.label = 'Ducks';
-
     // Custom color
-    var color = $attrs.color;
-    if(color) {
-      bar.css('background-color', color)
+    $scope.$watch('d.color', function(newVal) {
+      bar.css('background-color', newVal)
+    })
+
+    // Watch the value
+    $scope.$watch('d.value', setHeight)
+
+    ///////////
+
+    function setHeight(height) {
+      // Delay for effect
+      $timeout(function() {
+      // Bound the value
+        height = Math.min(Math.max(height, 2),98);
+        bar.css('top', (100 - height) + '%');
+      }, 400);
     }
-
-    // Random oscillating
-    // var update_int = $interval(function() {
-    //   bar.css('top', (100 - (Math.ceil(Math.random() * 95) + 5)) + '%');
-    // },1000);
-
-    // $el.on('destroy', function() {
-    //   $interval.clear(update_int);
-    // })
 
   }
 
