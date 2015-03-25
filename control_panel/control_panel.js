@@ -2,7 +2,7 @@
 (function(angular) {
 
 angular
-  .module('controlPanel', ['controlPanelVertMeter'])
+  .module('controlPanel', ['controlPanelVertMeter', 'controlPanelMainFrame'])
   .controller('controlPanel', ['$timeout',controlPanelControlller]);
 
   ///////////
@@ -28,6 +28,10 @@ angular
       label: 'Explored',
       value: 100,
       color: vm.colors[1].value,
+      show: true
+    }
+    vm.main_frame = {
+      time: 100,
       show: true
     }
 
