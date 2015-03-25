@@ -1,10 +1,13 @@
-** Backlog [2/12]
+** Backlog [3/13]
 - [X] Create Angular framework [1/1]
     - [X] Create a dummy directive for a progress bar
 - [X] Put an intrinsic ratio frame around components
-- [-] Create "Points" and "Explored" progress bars, vertical
+- [ ] Use absolute positioned coords for control panel, with calculate size
+      on container
+- [X] Create "Points" and "Explored" progress bars, vertical
   - [X] Basics vertical motion with transition
-  - [ ] Expose api
+  - [X] Expose api
+    - [X] ...using $scope
 - [ ] Create a main frame for holding CT timer and Db
 - [ ] Create "Countdown Timer" and "Db" progress meters
 - [ ] Create inject/data abstraction
