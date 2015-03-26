@@ -1,0 +1,37 @@
+[data-toolbox] {
+  position: fixed;
+  right: 0;
+  width: 40%;
+  font-size: 1.3em;
+
+  .frame {
+    @include clearfix;
+    background-color: $frame-color;
+    color: white;
+    border-radius: 0.8em;
+    padding: 0.5em;
+
+    input {
+      color: grey;
+    }
+
+    .item {
+      clear: both;
+      & > *{
+        margin: 0.33em 0.4em 0.33em 0.4em;
+        float: left;
+      }
+      & > input:not([type=checkbox]) {
+        margin-top: 0;
+      }
+      button {
+        min-width: 8em;;
+      }
+
+    }
+
+
+
+
+  }
+}

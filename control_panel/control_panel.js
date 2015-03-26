@@ -2,7 +2,7 @@
 (function(angular) {
 
 angular
-  .module('controlPanel', ['controlPanelVertMeter', 'controlPanelMainFrame'])
+  .module('controlPanel', ['controlPanelVertMeter', 'controlPanelMainFrame', 'toolbox'])
   .controller('controlPanel', ['$timeout',controlPanelControlller]);
 
   ///////////
@@ -34,6 +34,9 @@ angular
       time: 100,
       show: true
     }
+
+    vm.mockup = {};
+    vm.mockup.show = true;
 
     $timeout(function() {
       vm.points.value = 45;

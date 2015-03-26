@@ -17,6 +17,7 @@ module.exports = {
               *.js,\
               js/*.js,\
               control_panel/**/*,\
+              toolbox/**/*,\
               css/*.css",
     "server": true,
     "proxy": false,

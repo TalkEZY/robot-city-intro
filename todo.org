@@ -1,4 +1,4 @@
-** Backlog [6/16]
+** Backlog [7/16]
 - [X] Create Angular framework [1/1]
     - [X] Create a dummy directive for a progress bar
 - [X] Put an intrinsic ratio frame around components
@@ -10,7 +10,7 @@
     - [X] ...using $scope
 - [X] Create a main frame for holding CT timer and Db
 - [X] Create "Countdown Timer"
-- [ ] Create Db meter
+- [X] Create Db meter
 - [ ] Create inject/data abstraction
   - [ ] Keep in mind we'll be talking to the API ourselves (PHP).
 - [ ] Create scaling font-size

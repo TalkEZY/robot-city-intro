@@ -28,10 +28,17 @@
 
             <div id="control-panel"  data-ng-controller="controlPanel as vm">
 
+              <div class="mockup" data-ng-show="tool.mockup.show"></div>
+              <div class="mockup-overlay" data-ng-style="{'opacity': tool.mockup.opacity}" ></div>
+
+              <div data-toolbox></div>
+
+              <div data-ng-show="tool.panel.show" data-ng-style="{'opacity': tool.panel.opacity}">
                 <div id="explored-meter" data-vert-meter="" data-state="vm.explored" > </div>
                 <div id="points-meter" data-vert-meter="" data-state="vm.points" > </div>
 
                 <div id="control-panel-main-frame" data-main-frame="" data-state="vm.main_frame" > </div>
+              </div>
 
             </div>
           </div>
@@ -57,6 +64,7 @@
         <script src="control_panel/control_panel.js"></script>
         <script src="js/app.module.js"></script>
 
+        <script src="toolbox/toolbox.js"></script>
         <script src="js/rig.js"></script>
 
     </body>
