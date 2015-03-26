@@ -24,7 +24,8 @@ function vertMeter($interval, $timeout) {
   function link($scope,$el,$attrs) {
     $scope.state = $scope.state || {};
     var state = $scope.state;
-    var bar = $el.find('.bar');
+    var bar = $el.find('.bar'); // This is proper jQuery not jqlite... be warned!
+    var min = 2, max = 100;
 
     // Custom color
     $scope.$watch('state.color', function(newVal) {
@@ -38,11 +39,9 @@ function vertMeter($interval, $timeout) {
 
     function setHeight(height) {
       // Delay for effect
-      $timeout(function() {
       // Bound the value
-        height = Math.min(Math.max(height, 2),98);
-        bar.css('top', (100 - height) + '%');
-      }, 400);
+      height = Math.min(Math.max(height, min),max);
+      bar.css('top', (100 - height) + '%');
     }
 
   }
