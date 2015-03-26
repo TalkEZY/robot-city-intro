@@ -1,0 +1,23 @@
+.scaled {
+  font-size: 1vw;
+}
+
+/** iPad with portrait orientation.  */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+  .scaled {
+    font-size: 13px;
+  }
+}
+/** iPad with landscape orientation.  */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+  .scaled {
+    font-size: 11px;
+  }
+}
+
+/* iPhone 5, You can also target devices with aspect ratio.  */
+@media screen and (device-aspect-ratio: 40/71) {
+  .scaled {
+    font-size: 11px;
+  }
+}
