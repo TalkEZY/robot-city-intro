@@ -36,12 +36,6 @@ function mainFrame($timeout, $interval) {
     state.start_decibel_jiggle = start_decibel_jiggle;
     state.stop_decibel_jiggle = stop_decibel_jiggle;
 
-    // rig, to start the timer
-    $timeout(function() {
-      state.start_timer(1000 * 60 * 3 + 1000*60*60*5);
-      state.start_decibel_jiggle();
-    },2000);
-
     ////////////
 
     function start_countdown(time) {

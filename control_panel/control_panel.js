@@ -2,7 +2,7 @@
 (function(angular) {
 
 angular
-  .module('controlPanel', ['controlPanelVertMeter', 'controlPanelMainFrame', 'toolbox'])
+  .module('controlPanel', ['controlPanelVertMeter', 'controlPanelMainFrame','controlPanelSelectionBoxes', 'toolbox'])
   .controller('controlPanel', ['$timeout',controlPanelControlller]);
 
   ///////////
@@ -30,17 +30,19 @@ angular
       color: vm.colors[1].value,
       show: true
     }
+
     vm.main_frame = {
       time: 100,
       show: true
     }
 
-    vm.mockup = {};
-    vm.mockup.show = true;
-
+    // Rig, start things going to see some action...
     $timeout(function() {
       vm.points.value = 45;
-    },2000)
+      vm.main_frame.time = 1000 * 60 * 7;
+      // vm.main_frame.start_timer();
+      // vm.main_frame.start_decibel_jiggle();
+    },1000)
 
   }
 

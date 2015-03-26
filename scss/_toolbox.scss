@@ -24,6 +24,9 @@
       & > input:not([type=checkbox]) {
         margin-top: 0;
       }
+      input[type=number] {
+        width: 6em;
+      }
       button {
         min-width: 8em;;
       }

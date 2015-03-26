@@ -30,7 +30,7 @@ angular
       tool.panel.opacity = 1;
       tool.panel.show = true;
 
-      tool.click_for_xy_enable = true;
+      tool.click_for_xy_enable = false;
       tool.click_for_xy = click_for_xy;
 
       /////////////

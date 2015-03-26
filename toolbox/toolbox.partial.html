@@ -1,13 +1,13 @@
 <div class="frame">
 
      <div class="item">
-       <div> Show mockup </div>
-        <input type="checkbox" data-ng-model="tool.mockup.show"/>
+       <div> Enable clicks for xy percent </div>
+        <input type="checkbox" data-ng-model="tool.click_for_xy_enable"/>
      </div>
 
      <div class="item">
-       <div> Enable clicks for xy percent </div>
-        <input type="checkbox" data-ng-model="tool.click_for_xy_enable"/>
+       <div> Show mockup </div>
+        <input type="checkbox" data-ng-model="tool.mockup.show"/>
      </div>
 
      <div class="item">
@@ -22,6 +22,13 @@
        <input type="range"  data-ng-model="tool.panel.opacity" min="0" max="1" step="0.05" />
        <h4>{{ tool.panel.opacity * 100 | number:0 }}%</h4>
      </div>
+
+      <div class="item">
+        <div>Points </div>
+        <input type="number" data-ng-model="vm.points.value">
+        <div>Explored </div>
+        <input type="number" data-ng-model="vm.explored.value">
+      </div>
 
       <div class="item">
         <div> Countdown speed</div>
