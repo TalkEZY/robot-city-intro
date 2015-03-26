@@ -1,3 +1,9 @@
 <div class="frame">
-  <h4 class="loud">Loud</h4>
+  <div class="frame-extras">
+    <h4 class="loud">Loud</h4>
+  </div>
+
+  <div class="box" data-ng-repeat="box in boxes">
+    <img data-ng-class="{'disabled': box.disabled}" data-ng-click="box_clicked(box)" data-ng-src="{{box.img_url}}">
+  </div>
 </div>

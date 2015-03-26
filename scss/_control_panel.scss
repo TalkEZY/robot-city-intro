@@ -104,15 +104,48 @@
     }
 
     [data-selection-boxes] {
+      $height-ratio: 9/10;
+      $width: 14%;
+
       position: absolute;
-      width: 20%;
-      height: 15%;
+      width: $width;
+      height: $width * $height-ratio;
       background-color: $frame-color;
-      .loud {
-        margin: .5em 0 0 .5em;
+
+      $extras-text-vert-padding: 0.6em;
+      $extras-text-size: 1.2em;
+      .frame-extras {
+
         position: absolute;
-        top: 0%;
-        left: 0%;
+        top: -$extras-text-vert-padding - $extras-text-size - 0.01em;
+        background: $frame-color;
+        text-align: left;
+        width: 100%;
+        .loud {
+          display: inline-block;
+          margin: 0;
+          padding: $extras-text-vert-padding/2 .8em;
+          left: 0%;
+        }
+      }
+
+      .box {
+        display: block;
+        position: relative;
+        width: 33.3%;
+        padding-bottom: 33.3%;
+        height: 0;
+        // margin-right: 5%;
+        // margin-bottom: 5%;
+        float: left;
+        img {
+          cursor: pointer;
+          top: 10%;
+          left: 10%;
+          position: absolute;
+          width: 80%;
+          height: 80%;
+        }
       }
     }
 
@@ -131,6 +164,10 @@
       left: 30%;
     }
 
+    #control-panel-selection-boxes-right {
+      bottom: 20%;
+      left: 45%;
+    }
     #points-meter {
       @include vert-meter;
       left: 16%;

@@ -36,6 +36,16 @@ angular
       show: true
     }
 
+    vm.boxes = [];
+
+    for(var i=0; i< 6; i++) {
+      vm.boxes[i] = {
+        // img_url: 'http://placekitten.com/g/300/300',
+        // disabled: false,
+        // click: 'state.box_clicked()'
+      };
+    }
+
     // Rig, start things going to see some action...
     $timeout(function() {
       vm.points.value = 45;
