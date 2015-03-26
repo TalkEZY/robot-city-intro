@@ -27,8 +27,19 @@ angular
       tool.mockup.opacity = 0.8;
       tool.mockup.show = true;
 
-      tool.panel.opacity = 0.8;
+      tool.panel.opacity = 1;
       tool.panel.show = true;
+
+      tool.click_for_xy_enable = true;
+      tool.click_for_xy = click_for_xy;
+
+      /////////////
+
+      function click_for_xy(e) {
+        if(tool.click_for_xy_enable) {
+          window.rig.alert_xy_scaled_percent(e);
+        }
+      }
     }
 
   }

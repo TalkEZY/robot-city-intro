@@ -1,8 +1,15 @@
 <div class="frame">
+
      <div class="item">
        <div> Show mockup </div>
         <input type="checkbox" data-ng-model="tool.mockup.show"/>
      </div>
+
+     <div class="item">
+       <div> Enable clicks for xy percent </div>
+        <input type="checkbox" data-ng-model="tool.click_for_xy_enable"/>
+     </div>
+
      <div class="item">
          <div>Overlay</div>
         <input type="range"  data-ng-model="tool.mockup.opacity" min="0" max="1" step="0.05" />

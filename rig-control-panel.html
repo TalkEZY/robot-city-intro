@@ -22,27 +22,26 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="scaled"><!-- to keep the correct ratio -->
-
-          <div class="ratio-container">
 
             <div id="control-panel"  data-ng-controller="controlPanel as vm">
+              <div class="scaled" data-ng-click="tool.click_for_xy($event)"><!-- to keep the correct ratio -->
+                <div class="ratio-container">
 
-              <div class="mockup" data-ng-show="tool.mockup.show"></div>
-              <div class="mockup-overlay" data-ng-style="{'opacity': tool.mockup.opacity}" ></div>
+                  <div class="mockup" data-ng-show="tool.mockup.show" ></div>
+                  <div class="mockup-overlay" data-ng-show="tool.mockup.show" data-ng-style="{'opacity': tool.mockup.opacity}" ></div>
 
-              <div data-toolbox></div>
+                  <div data-toolbox></div>
 
-              <div data-ng-show="tool.panel.show" data-ng-style="{'opacity': tool.panel.opacity}">
-                <div id="explored-meter" data-vert-meter="" data-state="vm.explored" > </div>
-                <div id="points-meter" data-vert-meter="" data-state="vm.points" > </div>
+                  <div data-ng-show="tool.panel.show" data-ng-style="{'opacity': tool.panel.opacity}">
+                    <div id="explored-meter" data-vert-meter="" data-state="vm.explored" > </div>
+                    <div id="points-meter" data-vert-meter="" data-state="vm.points" > </div>
 
-                <div id="control-panel-main-frame" data-main-frame="" data-state="vm.main_frame" > </div>
+                    <div id="control-panel-main-frame" data-main-frame="" data-state="vm.main_frame" > </div>
+                  </div>
+
+                </div>
               </div>
-
             </div>
-          </div>
-        </div>
 
 
         <!-- Javscript -->
