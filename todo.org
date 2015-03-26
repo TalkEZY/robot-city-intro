@@ -1,17 +1,20 @@
-** Backlog [3/13]
+** Backlog [6/16]
 - [X] Create Angular framework [1/1]
     - [X] Create a dummy directive for a progress bar
 - [X] Put an intrinsic ratio frame around components
-- [ ] Use absolute positioned coords for control panel, with calculate size
+- [X] Use absolute positioned coords for control panel, with calculate size
       on container
 - [X] Create "Points" and "Explored" progress bars, vertical
   - [X] Basics vertical motion with transition
   - [X] Expose api
     - [X] ...using $scope
-- [ ] Create a main frame for holding CT timer and Db
-- [ ] Create "Countdown Timer" and "Db" progress meters
+- [X] Create a main frame for holding CT timer and Db
+- [X] Create "Countdown Timer"
+- [ ] Create Db meter
 - [ ] Create inject/data abstraction
   - [ ] Keep in mind we'll be talking to the API ourselves (PHP).
+- [ ] Create scaling font-size
+- [ ] Add time graphic, a clock or rotating svg
 - [ ] Create the wave graph
 - [ ] Create the mood on the wave graph, using color and perhaps thickness
 - [ ] Create the selection boxes, 12
