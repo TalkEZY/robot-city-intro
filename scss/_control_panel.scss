@@ -1,16 +1,3 @@
-.scaled {
-
-  & * {
-    pointer-events: none;
-  }
-}
-#control-panel-wrapper {
-    position: relative;
-    // width: 512px;
-    font-size: 8px;
-    height: 0;
-    padding-bottom: 768/1024 * 100%;
-}
 
 // Control panel
 #control-panel{
@@ -46,19 +33,42 @@
         height: 100%;
 
         background-color: $frame-color;
-        font-size: 1.2em;
+        font-size: 1em;
+
+        h4 {
+          padding: 0;
+          margin: 0;
+          font-weight: bold;
+          font-size: 2em;
+        }
+
+        h5 {
+          padding: 0;
+          margin: 0;
+          font-weight: normal;
+          font-size: 1.3em;
+        }
 
         .countdown {
-          position: relative;
+          position: absolute;
           top: 50%;
           width: 50%;
           margin-top: -2em;
           .timer {
             .time {
-              font-weight: bold;
             }
           }
         }
+
+        .decibels-meter {
+          position: absolute;
+          right: 30%;
+          bottom: 5%;
+          .decibels {
+            margin-bottom: -.2em;
+          }
+        }
+
       }
     }
 

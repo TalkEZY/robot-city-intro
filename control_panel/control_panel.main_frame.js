@@ -22,19 +22,24 @@ function mainFrame($timeout, $interval) {
   ////////////////
 
   function link($scope,$el,$attrs) {
-    $scope.state = $scope.state || {};
     var state = $scope.state;
 
     state.time = 0;
-    state.sample = 100;
+    state.time_sample = 100;
     state.speed = 10;
+    state.start_timer = start_countdown;
+    state.stop_timer = stop_countdown;
 
-    state.start = start_countdown;
-    state.stop = stop_countdown;
+    state.decibels = 56;
+    state.decibel_range = 2;
+    state.decibel_sample = 80;
+    state.start_decibel_jiggle = start_decibel_jiggle;
+    state.stop_decibel_jiggle = stop_decibel_jiggle;
 
     // rig, to start the timer
     $timeout(function() {
-      state.start(1000 * 60 * 3 + 1000*60*60*5);
+      state.start_timer(1000 * 60 * 3 + 1000*60*60*5);
+      state.start_decibel_jiggle();
     },2000);
 
     ////////////
@@ -44,8 +49,12 @@ function mainFrame($timeout, $interval) {
         state.time = time;
       }
 
+      // We have no running timer?
+      if(state._timeout) {
+        $timeout.cancel(state._timeout);
+      }
       state._timeout = $timeout(function() {
-        var reduce = (state.sample/1000) * state.speed * 1000;
+        var reduce = (state.time_sample/1000) * state.speed * 1000;
         if(state.time > reduce) {
           state.time -= reduce;
           start_countdown();
@@ -53,11 +62,29 @@ function mainFrame($timeout, $interval) {
         else {
           state.time = 0;
         }
-      },state.sample)
+      },state.time_sample)
+
     }
 
     function stop_countdown() {
       $timeout.cancel(state._timeout);
+      state._timeout = void 0;
+    }
+
+    function start_decibel_jiggle() {
+
+      // Already jiggling
+      if(!state._decibel_jiggle_timeout) {
+        state._decibel_jiggle_timeout = $interval(function() {
+          var new_delta = (Math.random() * state.decibel_range * 2) - state.decibel_range;
+          state.decibels = Math.round((state.decibels + new_delta))
+        }, state.decibel_sample)
+      }
+    }
+
+    function stop_decibel_jiggle() {
+      $interval.cancel(state._decibel_jiggle_timeout);
+      state._decibel_jiggle_timeout = void 0;
     }
 
   }

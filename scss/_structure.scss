@@ -67,6 +67,19 @@ rect#loading-mask {
     }
 }
 
+.scaled {
+  position: relative;
+  // width: 600px;
+  font-size: 8px; // to be scaled with javascript
+}
+
+.ratio-container {
+  position: relative;
+  height: 0;
+  padding-bottom: 768/1024 * 100%; // inverse ratio  -or-  h/w
+}
+
+
 button{
     border-radius: 4px;
     background-color: $color-button-default;

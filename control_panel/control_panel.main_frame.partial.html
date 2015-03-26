@@ -1,9 +1,14 @@
 <div class="frame" data-ng-show="state.show">
   <div class="countdown">
-    <p class="timer">
-      Countdown
-      <br>
-      <span class="time">{{ state.time | date:'HH:mm:ss':'UTC' }}</span>
-    </p>
+      <div class="timer">
+        <h5> Countdown </h5>
+        <h4 class="time ">{{ state.time | date:'HH:mm:ss':'UTC' }}</h4>
+      </div>
   </div>
+
+  <div class="decibels-meter">
+    <h4 class="decibels">{{ state.decibels }}</h4>
+    <h5>Decibels</h5>
+  </div>
+
 </div>
