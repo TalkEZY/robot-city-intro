@@ -24,6 +24,13 @@
       & > input:not([type=checkbox]) {
         margin-top: 0;
       }
+      .block {
+        &>* {
+          display: block;
+          clear: both;
+          float: none;
+        }
+      }
       input[type=number] {
         width: 6em;
       }

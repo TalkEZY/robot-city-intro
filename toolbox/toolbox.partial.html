@@ -34,15 +34,20 @@
         <div> Countdown speed</div>
         <input type="number" data-ng-model="vm.main_frame.speed">
       </div>
-
       <div class="item">
-        <button  data-ng-click="vm.main_frame.start_timer()">Start Timer</button>
-        <button  data-ng-click="vm.main_frame.stop_timer()">Stop Timer</button>
       </div>
 
       <div class="item">
-        <button  data-ng-click="vm.main_frame.start_decibel_jiggle()">Start decibel</button>
-        <button  data-ng-click="vm.main_frame.stop_decibel_jiggle()">Stop decibel</button>
+        <div class="block" >
+          <button  data-ng-click="vm.main_frame.start_timer()">Start Timer</button>
+          <button  data-ng-click="vm.main_frame.stop_timer()">Stop Timer</button>
+          <button data-ng-click="vm.main_frame.time = 1000*60*7;">Reset Timer</button>
+        </div>
+        <div class="block">
+          <button  data-ng-click="vm.main_frame.start_decibel_jiggle()">Start decibel</button>
+          <button  data-ng-click="vm.main_frame.stop_decibel_jiggle()">Stop decibel</button>
+        </div>
       </div>
+
 
 </div>
