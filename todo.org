@@ -11,13 +11,13 @@
 - [X] Create a main frame for holding CT timer and Db
 - [X] Create "Countdown Timer"
 - [X] Create Db meter
-- [ ] Create inject/data abstraction
-  - [ ] Keep in mind we'll be talking to the API ourselves (PHP).
+- [ ] Create the selection boxes, 12
 - [ ] Create scaling font-size
-- [ ] Add time graphic, a clock or rotating svg
 - [ ] Create the wave graph
 - [ ] Create the mood on the wave graph, using color and perhaps thickness
-- [ ] Create the selection boxes, 12
 - [ ] Add flicker/pulsating opacity on frames
 - [ ] Add animatable PNGs to main frame
 - [ ] Add avatar with circular frame
+- [ ] Get data from a json file
+- [ ] Add time graphic, a clock or rotating svg
+
