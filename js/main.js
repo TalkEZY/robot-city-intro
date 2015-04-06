@@ -129,14 +129,17 @@
 
     function custom_scaled_attrs (el) {
         var $el = $(el);
+        var attrs = $el.data();
 
-        $.each($el.data(), function(k,v) {
-            // scale each value that is wrapped with curly braces .... {number}
-            var new_value = ('' + v).replace(/\{(-?[0-9.]+)\}/g, function(match, num) {
-                return parseFloat(num) * scale;
-            })
-            $el.attr('data-'+k, new_value);
-        });
+        if(attrs) {
+          $.each(attrs, function(k,v) {
+              // scale each value that is wrapped with curly braces .... {number}
+              var new_value = ('' + v).replace(/\{(-?[0-9.]+)\}/g, function(match, num) {
+                  return parseFloat(num) * scale;
+              })
+              $el.attr('data-'+k, new_value);
+          });
+        }
 
         var origin = $el.attr('data-_origin');
         if (origin) {

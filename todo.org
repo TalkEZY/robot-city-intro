@@ -1,0 +1,23 @@
+** Backlog [7/16]
+- [X] Create Angular framework [1/1]
+    - [X] Create a dummy directive for a progress bar
+- [X] Put an intrinsic ratio frame around components
+- [X] Use absolute positioned coords for control panel, with calculate size
+      on container
+- [X] Create "Points" and "Explored" progress bars, vertical
+  - [X] Basics vertical motion with transition
+  - [X] Expose api
+    - [X] ...using $scope
+- [X] Create a main frame for holding CT timer and Db
+- [X] Create "Countdown Timer"
+- [X] Create Db meter
+- [ ] Create the selection boxes, 12
+- [ ] Create scaling font-size
+- [ ] Create the wave graph
+- [ ] Create the mood on the wave graph, using color and perhaps thickness
+- [ ] Add flicker/pulsating opacity on frames
+- [ ] Add animatable PNGs to main frame
+- [ ] Add avatar with circular frame
+- [ ] Get data from a json file
+- [ ] Add time graphic, a clock or rotating svg
+

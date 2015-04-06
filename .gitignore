@@ -2,3 +2,5 @@
 node_modules/
 npm-debug.log
 BUs
+bower_components
+css/app.css

@@ -9,3 +9,41 @@
     color: $color-main-bg-text;
 }
 
+.cleared {
+  @include clearfix;
+}
+
+.boxy {
+  background-color: $frame-color;
+  margin: 2em;
+}
+
+.white-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+
+}
+
+.scaled {
+  & * {
+    // pointer-events: none;
+  }
+}
+
+.mockup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/mockup-dash.png) no-repeat top left ;
+  background-size: 100% 100%;
+}
+.mockup-overlay {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-color: white;
+}

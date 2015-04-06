@@ -1,108 +1,13 @@
 @import "compass/utilities/general/clearfix";
 @import "normalize";
 @import "h5bp";
+
 @import "variables";
+
+@import "structure";
+@import "control_panel";
+
 @import "rig";
+@import "toolbox";
 
 
-body {
-    background-color: $color-main-bg;
-}
-
-#intro-section {
-    position: relative;
-    color: $color-main-bg-text;
-    .header-panel {
-        position: absolute;
-        border-radius: 4px;
-        background-color: $color-header-panel-bg;
-
-        top: 2em;
-        left: 18%;
-        right: 18%;
-
-        text-align: center;
-        padding: 3em;
-
-        z-index: 100; // above layers
-    }
-}
-
-rect#loading-mask {
-    opacity: 0.6;
-    fill: $color-loading-screen-bg;
-}
-
-#loading-screen {
-    background: $color-loading-screen-bg;
-    position: fixed;
-    z-index: 900; // Highest
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    width: 100%;
-
-    & > * {
-        position: fixed;
-        top: 50%;
-        left: 0px;
-        right: 0px;
-        text-align: center;
-        color: $color-loading-screen-text;
-        font-weight: bold;
-    }
-    & > svg {
-        top: 35%;
-        top: calc(50% - #{$loading-building-height} - 1em);
-        left: 50%;
-        margin-left: -$loading-building-width/2;
-    }
-}
-
-#control-panel{
-    position: relative;
-    text-align: center;
-    section {
-        position: absolute;
-        min-height: 150px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        background: $color-trans-white;
-        z-index: 100; // Above main screen
-    }
-}
-
-button{
-    border-radius: 4px;
-    background-color: $color-button-default;
-    color: $color-trans-white;
-    border: none;
-    border-bottom: 4px solid darken($color-button-default, 20%);
-    padding: 0.2em 1em;
-    margin: 0;
-    &:hover {
-        background-color: lighten($color-button-default, 10%);
-    }
-    &:visited {
-        border: inherit;
-    }
-}
-
-#layers {
-    position: relative;
-    margin: 0 auto;
-
-    .layer {
-        position: relative;
-    }
-    .absolute {
-        position: absolute;
-    }
-    .no-overflow {
-        height: inherit;
-        overflow: hidden;
-        position: relative;
-    }
-}

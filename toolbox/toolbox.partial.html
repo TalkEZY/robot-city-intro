@@ -1,0 +1,48 @@
+<div class="frame">
+
+     <div class="item">
+       <div> Enable clicks for xy percent </div>
+        <input type="checkbox" data-ng-model="tool.click_for_xy_enable"/>
+     </div>
+
+     <div class="item">
+       <div> Show mockup </div>
+        <input type="checkbox" data-ng-model="tool.mockup.show"/>
+     </div>
+
+     <div class="item">
+         <div>Overlay</div>
+        <input type="range"  data-ng-model="tool.mockup.opacity" min="0" max="1" step="0.05" />
+        <h4>{{ tool.mockup.opacity * 100 | number:0 }}%</h4>
+     </div>
+
+     <div class="item">
+       <div> Show Panel </div>
+       <input type="checkbox" data-ng-model="tool.panel.show"/>
+       <input type="range"  data-ng-model="tool.panel.opacity" min="0" max="1" step="0.05" />
+       <h4>{{ tool.panel.opacity * 100 | number:0 }}%</h4>
+     </div>
+
+      <div class="item">
+        <div>Points </div>
+        <input type="number" data-ng-model="vm.points.value">
+        <div>Explored </div>
+        <input type="number" data-ng-model="vm.explored.value">
+      </div>
+
+      <div class="item">
+        <div> Countdown speed</div>
+        <input type="number" data-ng-model="vm.main_frame.speed">
+      </div>
+
+      <div class="item">
+        <button  data-ng-click="vm.main_frame.start_timer()">Start Timer</button>
+        <button  data-ng-click="vm.main_frame.stop_timer()">Stop Timer</button>
+      </div>
+
+      <div class="item">
+        <button  data-ng-click="vm.main_frame.start_decibel_jiggle()">Start decibel</button>
+        <button  data-ng-click="vm.main_frame.stop_decibel_jiggle()">Stop decibel</button>
+      </div>
+
+</div>
